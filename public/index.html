@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="entrance">
+      <form class="entrance-form" action="#">
+        <label for="entrance-form-nickname">Nickname:</label>
+        <input type="text" id="entrance-form-nickname" name="nickname" value="" minlength="2" maxlength="20" required>
+        <button class="entrance-form-button" type="submit">Wejdź</button>
+      </form>
+    </div>
+    <div class="main">
+      <div class="header">
+        <h1>Kamień Papier Nożyce</h1>
+      </div>
+      <div class="game">
+        <div class="game-player1">
+          <span class="game-player1-nickname">Oczekiwanie na gracza</span>
+          <div class="game-player1-loader"><div></div><div></div><div></div><div></div></div>
+          <div class="game-player1-weapons">
+            <img class="game-player1-weapons-icon game-board-player1-icon-rock" src="img/rock.png" alt="rock">
+            <img class="game-player1-weapons-icon game-board-player1-icon-paper" src="img/paper.png" alt="paper">
+            <img class="game-player1-weapons-icon game-board-player1-icon-scissors" src="img/scissors.png" alt="scissors">
+          </div>
+          <button class="game-join-button1">Dołącz</button>
+        </div>
+        <div class="game-board">
+          <div class="game-board-course">Zaczynamy grę!</div>
+          <div class="game-board-player1">
+            <img class="game-board-player1-icon" src="" alt="">
+          </div>
+          <div class="game-board-score">0 : 0</div>
+          <div class="game-board-player2">
+            <img class="game-board-player2-icon" src="" alt="">
+          </div>
+        </div>
+        <div class="game-player2">
+          <span class="game-player2-nickname">Oczekiwanie na gracza</span>
+          <div class="game-player2-loader"><div></div><div></div><div></div><div></div></div>
+          <div class="game-player2-weapons">
+            <img class="game-player2-weapons-icon game-board-player2-icon-scissors" src="img/scissors.png" alt="scissors">
+            <img class="game-player2-weapons-icon game-board-player2-icon-paper" src="img/paper.png" alt="paper">
+            <img class="game-player2-weapons-icon game-board-player2-icon-rock" src="img/rock.png" alt="rock">
+          </div>
+          <button class="game-join-button2">Dołącz</button>
+        </div>
+      </div>
+      <div class="lobby">
+        <span class="lobby-online-span"></span>
+        <div class="lobby-chat">
+          <form class="lobby-chat-form" action="#">
+            <textarea class="lobby-chat-form-textarea" name="lobby-chat-form-textarea" placeholder="Twoja wiadomość..." required></textarea>
+            <button class="lobby-chat-form-button" type="submit">Wyślij</button>
+          </form>
+          <div class="lobby-chat-messages"></div>
+        </div>
+      </div>
+    </div>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.2/gsap.min.js"
+      integrity="sha512-kVlGhj2qFy+KBCFuvjBJTGUMxbdqJKs4yK2jh0e0VPhWUPiPC87bzm4THmaaIee3Oj7j6sDpTTgm2EPPiESqBg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="https://cdn.socket.io/4.6.1/socket.io.min.js"></script>
+    <script type="module" src="./js/index.js"></script>
+  </body>
+</html>

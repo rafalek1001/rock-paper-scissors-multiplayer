@@ -1,0 +1,365 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+  background-color: khaki;
+}
+
+.entrance {
+  position: absolute;
+  left: 50%;
+  top: 25%;
+  transform: translate(-50%);
+  z-index: 999;
+}
+
+.entrance-form label {
+  display: block;
+  text-align: center;
+}
+
+input[type=text], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 2px solid black;
+  border-radius: 4px;
+  box-sizing: border-box;
+  text-align: center;
+  background-color: #ccc;
+}
+
+.entrance-form-button {
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.entrance-form-button:hover {
+  background-color: #45a049;
+}
+
+.main {
+  opacity: 30%;
+  pointer-events: none;
+}
+
+.header {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.game {
+  display: flex;
+  margin: 20px auto 0 auto;
+  width: 1000px;
+  background-color: lightblue;
+}
+
+.game-player1 {
+  width: 250px;
+  height: 300px;
+  border: solid red 4px;
+}
+
+.game-player1-weapons,
+.game-player2-weapons {
+  display: flex;
+  justify-content: space-around;
+  visibility: hidden;
+  pointer-events: auto;
+}
+
+.game-player1-weapons-icon,
+.game-player2-weapons-icon {
+  width: 64px;
+  cursor: pointer;
+}
+
+.game-player2-weapons-icon {
+  transform: scaleX(-1);
+}
+
+.game-player1-weapons-icon:hover {
+  border: 4px solid goldenrod;
+}
+
+.game-player2-weapons-icon:hover {
+  border: 4px solid goldenrod;
+}
+
+.game-board {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  grid-template-rows: 70px auto;
+  width: 500px;
+  height: 300px;
+  text-align: center;
+  border: solid black 4px;
+}
+
+.game-board-course {
+  display: none;
+  grid-area: 1 / 1 / 2 / 6;
+  align-self: center;
+  font-size: 24px;
+}
+
+.game-board-player1 {
+  display: none;
+  grid-area: 2 / 1 / 3 / 2;
+  align-self: center;
+}
+
+.game-board-player2 {
+  display: none;
+  grid-area: 2 / 3 / 3 / 4;
+  align-self: center;
+}
+
+.game-board-player1-icon,
+.game-board-player2-icon {
+  box-sizing: content-box;
+  width: 100px;
+  border: 8px solid green;
+  border-radius: 50%;
+  background-color: lightgreen;
+}
+
+.game-board-player2-icon {
+  transform: scaleX(-1);
+}
+
+.game-board-score {
+  display: none;
+  grid-area: 2 / 2 / 3 / 3;
+  align-self: center;
+  font-size: 60px;
+}
+
+.game-player2 {
+  width: 250px;
+  height: 300px;
+  border: solid red 4px;
+}
+
+.game-join-button1,
+.game-join-button2 {
+  display: block;
+  padding: 5px;
+  margin: 50px auto 0 auto;
+  background-color: lightgreen;
+}
+
+.game-join-button1:hover {
+  cursor: pointer;
+}
+
+.game-join-button2:hover {
+  cursor: pointer;
+}
+
+.game-player1-nickname,
+.game-player2-nickname {
+  display: block;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.lobby {
+  position: relative;
+  margin-top: 30px;
+}
+
+.lobby-online-span {
+  display: block;
+  position: absolute;
+  width: 400px;
+  margin-left: 20px;
+}
+
+.lobby-chat {
+  position: relative;
+	width: 500px;
+  margin: 10px auto 0 auto;
+}
+
+.lobby-chat-form-textarea {
+  width: 85%;
+	padding: 0;
+	margin: 0;
+	resize: none;
+	border: solid black 2px;
+}
+
+.lobby-chat-form-button {
+  width: 12.61%;
+  height: 35px;
+	position: relative;
+	background-color: lightblue;
+  vertical-align: top;
+  margin-left: 8px;
+}
+
+.lobby-chat-messages {
+	width: 100%;
+	height: 200px;
+	border: 2px solid black;
+	overflow-y: scroll;
+  background-color: lightblue;
+}
+
+.lobby-chat-messages-span {
+  display: block;
+  padding: 2px;
+  border-bottom: solid black 2px;
+}
+
+.lobby-chat-messages-span-system {
+  background-color: moccasin;
+}
+
+.game-player1-loader {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+  left: 50%;
+  transform: translate(-50%);
+}
+
+.game-player1-loader div {
+  position: absolute;
+  top: 33px;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: black;
+  animation-timing-function: cubic-bezier(0, 1, 1, 0);
+}
+
+.game-player1-loader div:nth-child(1) {
+  left: 8px;
+  animation: game-player1-loader1 0.6s infinite;
+}
+
+.game-player1-loader div:nth-child(2) {
+  left: 8px;
+  animation: game-player1-loader2 0.6s infinite;
+}
+
+.game-player1-loader div:nth-child(3) {
+  left: 32px;
+  animation: game-player1-loader2 0.6s infinite;
+}
+
+.game-player1-loader div:nth-child(4) {
+  left: 56px;
+  animation: game-player1-loader3 0.6s infinite;
+}
+
+@keyframes game-player1-loader1 {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes game-player1-loader3 {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+
+@keyframes game-player1-loader2 {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(24px, 0);
+  }
+}
+
+.game-player2-loader {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+  left: 50%;
+  transform: translate(-50%);
+}
+
+.game-player2-loader div {
+  position: absolute;
+  top: 33px;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: black;
+  animation-timing-function: cubic-bezier(0, 1, 1, 0);
+}
+
+.game-player2-loader div:nth-child(1) {
+  left: 8px;
+  animation: game-player2-loader1 0.6s infinite;
+}
+
+.game-player2-loader div:nth-child(2) {
+  left: 8px;
+  animation: game-player2-loader2 0.6s infinite;
+}
+
+.game-player2-loader div:nth-child(3) {
+  left: 32px;
+  animation: game-player2-loader2 0.6s infinite;
+}
+
+.game-player2-loader div:nth-child(4) {
+  left: 56px;
+  animation: game-player2-loader3 0.6s infinite;
+}
+
+@keyframes game-player2-loader1 {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes game-player2-loader3 {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+
+@keyframes game-player2-loader2 {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(24px, 0);
+  }
+}
