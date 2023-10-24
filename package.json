@@ -4,7 +4,9 @@
   "description": "Rock Paper Scissors Multiplayer Game",
   "main": "app.js",
   "type": "module",
-  "scripts": {},
+  "scripts": {
+    "start": "node app"
+  },
   "author": {
     "name": "Rafał Kubala"
   },
