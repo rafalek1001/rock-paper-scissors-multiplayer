@@ -163,7 +163,7 @@ io.on('connection', socket => {
               io.emit('insertChatMessage', data);
             }
 
-            if (gameStatus.round === 6) {
+            if (gameStatus.round === 20) {
               const data = {
                 message: 'Przekroczona liczba 20 rund. Żaden z graczy nie wygrał.',
                 time: getCurrentTime(),
