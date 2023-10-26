@@ -33,6 +33,8 @@ const EMPTY_PLAYER_ID = null;
 const EMPTY_PLAYER_NICKNAME = null;
 const WAITING_FOR_PLAYER = null;
 
+const ROUND_TIME = 5;
+
 // ZMIENNE GLOBALNE
 const backendPlayers = {};
 
@@ -139,7 +141,7 @@ io.on('connection', socket => {
 
             while (gameStatus.player1Score < 3 && gameStatus.player2Score < 3 && gameStatus.round < 21 && lobbyStatus.player1Id !== null && lobbyStatus.player2Id !== null) {
               await showRoundNumber(io, gameStatus, 1);
-              await startCountdown(io, gameStatus, 10, '');
+              await startCountdown(io, gameStatus, ROUND_TIME, '');
               updateGameScore(io, gameStatus);
             }
           // KONIEC GRY
@@ -268,7 +270,7 @@ io.on('connection', socket => {
 
             while (gameStatus.player1Score < 3 && gameStatus.player2Score < 3 && gameStatus.round < 21 && lobbyStatus.player1Id !== null && lobbyStatus.player2Id !== null) {
               await showRoundNumber(io, gameStatus, 1);
-              await startCountdown(io, gameStatus, 10, '');
+              await startCountdown(io, gameStatus, ROUND_TIME, '');
               updateGameScore(io, gameStatus);
             }
           // KONIEC GRY
