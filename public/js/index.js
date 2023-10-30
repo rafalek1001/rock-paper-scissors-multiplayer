@@ -116,8 +116,8 @@ socket.on('updateLobby', lobbyStatus => {
     }
   } else {
     if (lobbyStatus.round1Started) {
-      setLobbyStyles(lobbyStatus, 1, 'hidden', 'Opuść', BUTTON_LEAVE_COLOR, GAME_START, 'hidden', 'visible', 'none', 'block', 'block');
-      setLobbyStyles(lobbyStatus, 2, 'hidden', 'Opuść', BUTTON_LEAVE_COLOR, GAME_START, 'hidden', 'visible', 'none', 'block', 'block');
+      setLobbyStyles(lobbyStatus, 1, 'hidden', 'Opuść', BUTTON_LEAVE_COLOR, GAME_START, 'hidden', 'hidden', 'none', 'block', 'block');
+      setLobbyStyles(lobbyStatus, 2, 'hidden', 'Opuść', BUTTON_LEAVE_COLOR, GAME_START, 'hidden', 'hidden', 'none', 'block', 'block');
     } else {
       setLobbyStyles(lobbyStatus, 1, 'hidden', 'Opuść', BUTTON_LEAVE_COLOR, GAME_START, 'hidden', 'hidden', 'none', 'block', 'none');
       setLobbyStyles(lobbyStatus, 2, 'hidden', 'Opuść', BUTTON_LEAVE_COLOR, GAME_START, 'hidden', 'hidden', 'none', 'block', 'none');
@@ -182,8 +182,8 @@ socket.on('startGamePlayer2', lobbyStatus => {
   // START GRY - LOBBY
 socket.on('startGameLobby', lobbyStatus => {
   if (lobbyStatus.round1Started) {
-    setLobbyStyles(lobbyStatus, 1, 'hidden', 'Opuść', BUTTON_LEAVE_COLOR, GAME_START, 'hidden', 'visible', 'none', 'block', 'block');
-    setLobbyStyles(lobbyStatus, 2, 'hidden', 'Opuść', BUTTON_LEAVE_COLOR, GAME_START, 'hidden', 'visible', 'none', 'block', 'block');
+    setLobbyStyles(lobbyStatus, 1, 'hidden', 'Opuść', BUTTON_LEAVE_COLOR, GAME_START, 'hidden', 'hidden', 'none', 'block', 'block');
+    setLobbyStyles(lobbyStatus, 2, 'hidden', 'Opuść', BUTTON_LEAVE_COLOR, GAME_START, 'hidden', 'hidden', 'none', 'block', 'block');
   } else {
     setLobbyStyles(lobbyStatus, 1, 'hidden', 'Opuść', BUTTON_LEAVE_COLOR, GAME_START, 'hidden', 'hidden', 'none', 'block', 'none');
     setLobbyStyles(lobbyStatus, 2, 'hidden', 'Opuść', BUTTON_LEAVE_COLOR, GAME_START, 'hidden', 'hidden', 'none', 'block', 'none');
